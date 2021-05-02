@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './sb-admin-2.min.css';
+import Sidebar from "./sidebar.js";
+import NavbarTop from './navbar';
+import Dashboard from './dashboard/dashboard';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrapper">
+
+      <Sidebar></Sidebar>
+      <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+      <NavbarTop>
+      </NavbarTop>
+      <div class="container-fluid">
+
+        <Dashboard>
+        </Dashboard>
+      
+      </div>
+      </div>
+      </div>
     </div>
   );
 }
